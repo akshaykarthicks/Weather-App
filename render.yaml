@@ -3,7 +3,7 @@ services:
     name: weather-django
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn weathers.wsgi:application"
+    startCommand: "cd weathers && gunicorn weathers.wsgi:application"
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
