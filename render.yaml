@@ -3,7 +3,7 @@ services:
     name: weather-django
     runtime: python
     buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --no-input"
-    startCommand: "cd weathers && gunicorn weathers.wsgi:application"
+    startCommand: "gunicorn --chdir weathers weathers.wsgi:application"
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
