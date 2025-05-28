@@ -3,7 +3,7 @@ services:
     name: weather-django
     runtime: python
     buildCommand: "pip install -r requirements.txt && cd weathers && python manage.py collectstatic --no-input"
-    startCommand: "cd weathers && gunicorn weathers.wsgi:application"
+    startCommand: "cd weathers && gunicorn --chdir=. weathers.wsgi:application"
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
@@ -16,4 +16,4 @@ services:
       - key: WEB_CONCURRENCY
         value: 4
       - key: PYTHONPATH
-        value: "."
+        value: "/opt/render/project/src/weathers"
