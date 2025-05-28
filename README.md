@@ -32,8 +32,8 @@ Before running this application, make sure you have the following installed:
 
 1. Clone the repository (or download the files):
 ```bash
-git clone <repository-url>
-cd weather-app
+git clone https://github.com/akshaykarthicks/Weather-App.git
+cd Weather-App
 ```
 
 2. Create a virtual environment (recommended):
@@ -56,4 +56,4 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-5. Create a `.env` file in the project root and add your OpenWeatherMap API key: 
+5. Create a `.env` file in the project root and add your OpenWeatherMap API key:
