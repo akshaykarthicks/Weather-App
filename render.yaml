@@ -2,15 +2,15 @@ services:
   - type: web
     name: weather-django
     runtime: python
-    buildCommand: "pip install -r requirements.txt && python weathers/manage.py collectstatic --no-input"
-    startCommand: "gunicorn weathers.weathers.wsgi:application"
+    buildCommand: "pip install -r requirements.txt && cd weathers && python manage.py collectstatic --no-input"
+    startCommand: "cd weathers && gunicorn weathers.wsgi:application"
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
       - key: SECRET_KEY
         generateValue: true
       - key: DJANGO_SETTINGS_MODULE
-        value: weathers.weathers.settings
+        value: weathers.settings
       - key: RENDER
         value: true
       - key: WEB_CONCURRENCY
