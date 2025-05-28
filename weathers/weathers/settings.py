@@ -26,12 +26,7 @@ SECRET_KEY = 'django-insecure-f3da+s%bk(bg=n1m=ip=y4ew9xsqwuf*&-^zt)ns^g1$cr3%=a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = []
-
-# Add render deployment URL to allowed hosts
-if 'RENDER' in os.environ:
-    ALLOWED_HOSTS.append('*.onrender.com')
-    ALLOWED_HOSTS.append('your-app-name.onrender.com')
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com']
 
 
 # Application definition
@@ -124,11 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
-# Configure static file storage for production
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Enable WhiteNoise's compression and caching support
+# WhiteNoise configuration
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
