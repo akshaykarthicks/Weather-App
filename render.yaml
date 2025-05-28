@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: weather-django
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn weathers.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DJANGO_SETTINGS_MODULE
+        value: weathers.settings
+      - key: RENDER
+        value: true
