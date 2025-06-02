@@ -1,6 +1,7 @@
 # Weather App
 
 A simple and elegant weather application built with Django that allows users to check the current weather conditions for any city around the world.
+![Screenshot 2025-05-28 140940](https://github.com/user-attachments/assets/7e49f1c2-9218-4369-8c80-f30f0292c89f)
 
 ## Features
 
